@@ -1,0 +1,21 @@
+## STATIC CONFIGURATION
+log:
+  level: INFO
+
+api:
+  insecure: false
+  dashboard: true
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+  api:                                                    # This is needed to tell it to listen out on 8080
+    address: ":8080"
+
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
